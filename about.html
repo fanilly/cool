@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <title>启一文化</title>
+  <link href="common/css/global.css" rel="stylesheet" type="text/css" />
+  <link href="common/css/fix.css" rel="stylesheet" type="text/css" />
+  <script src="common/js/jquery-1.11.0.min.js"></script>
+  <script src="common/js/jquery.easing.1.3.js"></script>
+  <script src="common/js/jquery.transit.min.js"></script>
+  <script src="common/js/jquery.mousewheel.js"></script>
+</head>
+
+<body style="background:url(common/image/video.jpg) center center no-repeat;background-size:cover;">
+  <div class="header">
+    <a href="/" class="logo"></a>
+    <div class="r">
+      <div class="t">
+        <div class="link"><a href="#">商务版官网入口</a></div>
+        <div class="tel">0371•55611177&nbsp;&nbsp;18638695976</div>
+      </div>
+      <div class="menu"><i></i><i></i><i></i></div>
+    </div>
+  </div>
+  <div class="nav_main">
+    <div class="inner">
+      <div class="d">
+        <a href="/service.html">
+          <h3>面面俱到</h3>
+          <p>我们为您提供全套的品牌设计
+            <br>解决方案</p>
+        </a>
+      </div>
+      <div class="d">
+        <a href="/fxal.html">
+          <h3>别具匠心</h3>
+          <p>闻道有先后，术业有专攻
+            <br>超越自我，用更加精湛的技艺诠释您的需求</p>
+        </a>
+      </div>
+      <div class="d">
+        <a href="/about.html">
+          <h3>持之以恒</h3>
+          <p>从开始的那刻起
+            <br>我们就不断的攀升，坚持我们的信念</p>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="serv"><a href="#" target="_blank" class="a1"></a><a href="#" target="_blank" class="a2"><i></i><i></i><i></i></a></div>
+  <script src="common/js/fun.js"></script>
+  <script src="common/js/global.js"></script>
+  <script src="common/js/vivus.min.js"></script>
+  <div class="aboutshadow"></div>
+  <div class="body"><a href="#" class="a_l"></a><a href="#" class="a_r"></a>
+    <div class="main"><span class="bdr b1"></span><span class="bdr b2"></span><span class="bdr b3"></span><span class="bdr b4"></span>
+      <div class="about">
+        <div class="content">
+          <h1>0371-55611177</h1>
+          <h2>Address</h2>
+          <h3>丰产路文化路东100米路南SOHO世纪城东塔8楼</h3>
+          <h4>0371-55611177&nbsp;&nbsp;0371-55611177&nbsp;&nbsp;0371-55611177&nbsp;&nbsp;0371-55611177&nbsp;&nbsp;0371-55611177</h4>
+          <div class="txt">
+            <p>河南启一文化艺术有限公司成立于2014年</p>
+            <p>是一家擅长策略的品牌设计公司。</p>
+            <p>&nbsp;</p>
+            <p>我们的经营理念：责任、热情、品质、包容</p>
+            <p>主要业务范围包括：主题展厅，景观规划，环境导示，廊道文化，多媒体技术，宣传用品等</p>
+            <p>河南启一文化艺术有限公司在总部在绿城（郑州），目标是将启一文化艺术</p>
+            <p>打造成品牌策划、品牌形象设计行业的龙头企业</p>
+          </div>
+          <div class="btn">
+            <svg id="svg1" xmlns="http://www.w3.org/2000/svg" version="1.1" width="210" height="38" x="0px" Y="0px">
+              <path d="M150 36 L0 36 L0 0 L50 0" />
+              <path d="M60 0 L210 0 L210 36 L160 36" />
+            </svg>
+            <a href="#" target="_blank">您是否需要专业的设计顾问</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+  if ($(window).width() / $(window).height() > 1920 / 1080) {
+    $(".vbg").height($(window).width() / 1920 * 1080);
+  } else {
+    $(".vbg").width($(window).height() / 1080 * 1920);
+  }
+  var sto1;
+  $(window).resize(function() {
+    clearTimeout(sto1);
+    sto1 = setTimeout(function() {
+      if ($(window).width() / $(window).height() > 1920 / 1080) {
+        $(".vbg").height($(window).width() / 1920 * 1080);
+        $(".vbg").width($(window).width());
+      } else {
+        $(".vbg").width($(window).height() / 1080 * 1920);
+        $(".vbg").height($(window).height());
+      }
+    }, 100);
+  });
+  var vd1 = document.getElementById('vbg1');
+  var vd2 = document.getElementById('vbg2');
+
+  function chooesvideo() {
+    var d = new Date();
+    if (d.getHours() > 7 && d.getHours() < 19) {
+      $("#vbg1 source").each(function(index, element) {
+      });
+      $("#vbg1").show();
+      $("#vbg2").remove();
+      $(".vbgm:first").show();
+      $(".vbgm:last").remove();
+    } else {
+      vd2.addEventListener("loadedmetadata", function() {
+        vd2.play();
+      });
+      $("#vbg1").remove();
+      $("#vbg2").show();
+      $(".vbgm:first").remove();
+      $(".vbgm:last").show();
+    }
+  }
+  chooesvideo();
+
+  if ($(window).width() < 1000) {
+    $(".vbg").remove();
+  } else {
+    $(".vbgm").remove();
+  }
+
+
+  $(function() {
+    winload();
+
+    settit(".about .content h1");
+    settit(".about .content h2");
+    settit(".about .content h3");
+    settit(".about .content h4");
+    $(".about .content .txt p").each(function(index, element) {
+      settxt($(this));
+    });
+
+    showtt(".about .content h1", 0);
+    showtt(".about .content h2", 500);
+    showtt(".about .content h3", 1000);
+    showtt(".about .content h4", 1000);
+    showtt(".about .content .showtxt", 2500);
+
+    setTimeout(function() {
+      $(".about .content .btn").animate({ opacity: 1 }, 500);
+      svg1 = new Vivus('svg1', { type: 'async', duration: 40 });
+    }, 4000);
+  });
+  </script>
+  <div class="footer">
+    <div class="left">
+      <div class="d">
+        <p>中国 · 郑州
+          <br>丰产路文化路东100米路南
+          <br>SOHO世纪城东塔8楼</p>
+      </div>
+      <div class="d">
+        <p>©2014-2017 158ch.com
+          <br>All Rights Reserved.
+          <br>豫ICP备xxxxxxxxxx号-x
+          <br>
+        </p>
+      </div>
+      <div class="d">
+        <p>Tel：0371-55611177&nbsp;&nbsp;18638695976
+          <br>Do You Best,Mutually Promote Symbiosis
+          <br>357219361@qq.com</p>
+      </div>
+    </div>
+    <div class="left2">
+      <div class="d">
+        <p>丰产路文化路东100米路南SOHO世纪城东塔8楼</p>
+      </div>
+      <div class="d">
+        <p>©2014-2017 QI YI</p>
+      </div>
+      <div class="d">
+        <p>Tel：400-6446-365 010-64928252 64929732</p>
+      </div>
+    </div>
+    <div class="m">
+      <p><strong><a href="tel:0371-55611177">0371-55611177</a></strong>
+        <br/>&copy;2014-2017 158ch.com
+        <br>豫ICP备 XXXXXXXX </p>
+    </div>
+    <style type="text/css">
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+      padding-left: 0px;
+      background-image: none;
+    }
+    </style>
+    <div class="right">
+      <div class="share bdsharebuttonbox"><a href="#" data-cmd="sqq" class="a1 bds_sqq"><i></i></a><a href="#" class="a2 bds_weixin" data-cmd="weixin"><i></i></a><a href="#" class="a3 bds_tsina" data-cmd="tsina"><i></i></a><a href="#" class="a4 bds_weixin" data-cmd="weixin"><i></i></a></div>
+    </div>
+    <div style="width:300px;margin:0 auto; padding-left: 62px;">
+      <a target="_blank" href="#" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#fff;">豫公网安备 xxxxxxxxxxxxx</p></a>
+    </div>
+  </div>
+</body>
+
+</html>
