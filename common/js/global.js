@@ -133,3 +133,57 @@ $(".passwd").each(function(index, element) {
 function winload(){
 	$("body").addClass("loaded");
 }
+
+function showCue(msg){
+	var cue =$('.mj-cue');
+	cue.html(msg).animate({
+		opacity:1,
+		top:15
+	},400,function(){
+		setTimeout(function(){
+			cue.animate({opacity:0},300,function(){
+				cue.css('top','-45px');
+			});
+		},2000);
+	});
+}
+
+$(function(){
+	var mask = $('.mj-mask'),
+		msg = $('.mj-msg');
+
+	//弹出留言框
+	$('.mj-showmsg').on('click',function(e){
+		e.stopPropagation();
+		e.preventDefault();
+		mask.css('top',0).animate({opacity:1});
+		msg.css('transform','translateY(0)').animate({opacity:1});
+	});
+
+	//隐藏留言框
+	mask.on('click',function(){
+		mask.css({top:-3000,opacity:0});
+		msg.stop().animate({opacity:0},300,function(){
+			msg.css('transform','translateY(-3000px)');
+		});
+		$('.mj-weichat').stop().animate({opacity:0},300,function(){
+			$('mj-weichat').css('transform','translateY(-3000px)')
+		});
+	});
+
+	//提交留言框
+	msg.find('form').submit(function(e){
+		e.preventDefault();
+		var phoneNumber = msg.find('input[type=tel]').val();
+		if (!(/^1[3|4|5|7|8|9][0-9]\d{4,8}$/.test(phoneNumber))) {
+			showCue('请输入正确的手机号')
+		}
+	});
+
+	$('.mj-showwechat').on('click',function(e){
+		e.stopPropagation();
+		e.preventDefault();
+		mask.css('top',0).animate({opacity:1});
+		$('.mj-weichat').css('transform','translateY(0)').animate({opacity:1});
+	});
+});
